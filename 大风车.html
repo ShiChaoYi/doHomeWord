@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		canvas{
+			/*background: white;*/
+			margin-left: 200px;
+			margin-top: 100px;
+			-webkit-animation: mm 3s linear infinite;
+		}
+		@-webkit-keyframes mm{
+			0%{
+				-webkit-transform: rotateZ(-360deg);
+			}
+		}
+		div{
+			width: 10px;
+			height: 400px;
+			background: #000000;
+			position: absolute;
+			left: 402px;
+			top: 305px;
+		}
+	</style>
+	<body>
+		<div></div>
+		<canvas id="MyCanvas" width="400" height="400"></canvas>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	var can=document.getElementById("MyCanvas");
+	var ctx=can.getContext("2d");
+	ctx.beginPath();
+	ctx.moveTo(0,0);
+	ctx.fillStyle="red";
+	ctx.bezierCurveTo(400,0,0,400,400,400);
+	ctx.fill();
+	ctx.closePath();
+	
+	ctx.beginPath();
+	ctx.moveTo(400,0);
+	ctx.fillStyle="blue";
+	ctx.bezierCurveTo(400,400,0,0,0,400);
+	ctx.fill();
+	ctx.closePath();
+</script>
